@@ -9,10 +9,19 @@ function App() {
     { action: "Play Hard", id: 2 },
     { action: "Work Hard", id: 3 },
   ]);
+
   const handleDelete = (id) => {
     const newTask = task.filter((task) => task.id !== id);
     setTask(newTask);
   };
+
+  setTimeout(() => {
+    let temp = [{ action: "abc", id: cid }];
+    temp = [...task, ...temp];
+    setCid(cid + 1);
+    setTask(temp);
+    setAct("");
+  }, 5000);
 
   return (
     <div className="App">
